@@ -1,3 +1,48 @@
+return {
+	'olimorris/onedarkpro.nvim',
+	lazy = false,
+	priority = 1000,
+	config = function()
+		require("onedarkpro").setup()
+		vim.cmd("colorscheme onedark")
+		vim.cmd("highlight Normal guibg=NONE ctermbg=NONE")
+		vim.cmd("highlight NvimTreeNormal guibg=NONE")
+	end,
+}
+
+
+
+
+
+
+
+--return {
+--    'shaunsingh/nord.nvim',
+--    lazy = false,
+--    priority = 1000,
+--    config = function()
+--	vim.g.nord_disable_background = true
+--	vim.g.nord_cursorline_transparent = true
+--	vim.g.nord_italic = true
+--	vim.g.nord_bold = true
+--	vim.cmd('colorscheme nord')
+--    end
+--}
+
+
+
+
+--return {
+--    'AlexvZyl/nordic.nvim',
+--    lazy = false,
+--    priority = 1000,
+--    config = function()
+--        require 'nordic' .load(),
+--		  transparent_bg = true,
+--    end
+--}
+
+
 -- return {
 --	"skylarmb/torchlight.nvim",
 --	lazy = false,
@@ -57,15 +102,13 @@
 --     require("cyberdream").setup({
 --            transparent = true,
 --			italic_comments = true,
---            hide_fillchars = true,
---            borderless_telescope = true,
 --            terminal_colors = true,
 --	})
 --    vim.cmd("colorscheme cyberdream")
 --    end,
 --}
-
-
+----
+--
 
 -- -- GruvBox
 -- return {
@@ -91,35 +134,35 @@
 --}
 
 
-return {
-
-	{
-	"craftzdog/solarized-osaka.nvim",
-	priority = 1000,
-	config = function()
-		--
-		require("solarized-osaka").setup({
-			transparent = true,
-			terminal_colors = true,
-			styles = {
-			sidebars = "transparent"
-			}
-		})
-
-		vim.cmd([[colorscheme solarized-osaka]])
-		--		
-		-- Diable Cursorline
-		vim.o.cursorline = false
-		vim.cmd [[highlight CursorLine NONE]]
-		--	
-		-- Color Cursor
-		vim.o.guicursor = "n-v-c:block-Cursor/lCursor"
-		vim.cmd [[highlight Cursor guifg='#00FF00'  guibg='#00FF00']]
-		--
-		end,
-	}
-
-}
+--return {
+--
+--	{
+--	"craftzdog/solarized-osaka.nvim",
+--	priority = 1000,
+--	config = function()
+--		--
+--		require("solarized-osaka").setup({
+--			transparent = true,
+--			terminal_colors = true,
+--			styles = {
+--			sidebars = "transparent"
+--			}
+--		})
+--
+--		vim.cmd([[colorscheme solarized-osaka]])
+--		--		
+--		-- Diable Cursorline
+--		vim.o.cursorline = false
+--		vim.cmd [[highlight CursorLine NONE]]
+--		--	
+--		-- Color Cursor
+--		vim.o.guicursor = "n-v-c:block-Cursor/lCursor"
+--		vim.cmd [[highlight Cursor guifg='#00FF00'  guibg='#00FF00']]
+--		--
+--		end,
+--	}
+--
+--}
 
 
 
