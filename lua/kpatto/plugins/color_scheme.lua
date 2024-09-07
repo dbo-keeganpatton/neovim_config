@@ -1,14 +1,63 @@
 return {
-	'olimorris/onedarkpro.nvim',
+	'NLKNguyen/papercolor-theme',
 	lazy = false,
 	priority = 1000,
 	config = function()
-		require("onedarkpro").setup()
-		vim.cmd("colorscheme onedark")
+		vim.cmd("colorscheme PaperColor")
 		vim.cmd("highlight Normal guibg=NONE ctermbg=NONE")
 		vim.cmd("highlight NvimTreeNormal guibg=NONE")
 	end,
 }
+
+-- Extremely Minimal
+--return {
+--	'p00f/alabaster.nvim',
+--	lazy = false,
+--	priority = 1000,
+--	config = function()
+--		vim.cmd("colorscheme alabaster")
+--		vim.cmd("highlight Normal guibg=NONE ctermbg=NONE")
+--		vim.cmd("highlight NvimTreeNormal guibg=NONE")
+--	end,
+--}
+
+
+
+
+--return {
+--	'catppuccin/nvim',
+--	name = "catppuccin",
+--	lazy = false,
+--	priority = 1000,
+--	config = function()
+--		require("catppuccin").setup(
+--			{
+--				flavour = "mocha"
+--			}
+--		)
+--		vim.cmd("colorscheme catppuccin")
+--		vim.cmd("highlight Normal guibg=NONE ctermbg=NONE")
+--		vim.cmd("highlight NvimTreeNormal guibg=NONE")
+--	end,
+--}
+--
+
+
+
+
+
+
+--return {
+--	'olimorris/onedarkpro.nvim',
+--	lazy = false,
+--	priority = 1000,
+--	config = function()
+--		require("onedarkpro").setup()
+--		vim.cmd("colorscheme onedark")
+--		vim.cmd("highlight Normal guibg=NONE ctermbg=NONE")
+--		vim.cmd("highlight NvimTreeNormal guibg=NONE")
+--	end,
+--}
 
 
 
@@ -90,8 +139,8 @@ return {
 --	vim.cmd("highlight NvimTreeNormal guibg=NONE")
 --	end,
 --}
+----
 --
-
 
 
 --return {
