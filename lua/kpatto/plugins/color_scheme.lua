@@ -1,14 +1,43 @@
 return {
-	'NLKNguyen/papercolor-theme',
+	'rose-pine/neovim',
 	lazy = false,
 	priority = 1000,
-	config = function()
-		vim.cmd("colorscheme PaperColor")
-		vim.cmd("highlight Normal guibg=NONE ctermbg=NONE")
-		vim.cmd("highlight NvimTreeNormal guibg=NONE")
-	end,
+	config = function ()
+		require("rose-pine").setup({
+			variant = "moon",
+			dark_variant = "moon",
+			dim_inactive_windows = true,
+			extend_background_behind_border = true,
+			enable = {
+				terminal = true,
+				legacy_highlights = true,
+				migrations = true,
+			},
+			styles = {
+				bold = true,
+				italic = true,
+				transparency = true
+			}
+	})
+	vim.cmd("colorscheme rose-pine")
+	end
 }
 
+
+
+
+
+--return {
+--	'NLKNguyen/papercolor-theme',
+--	lazy = false,
+--	priority = 1000,
+--	config = function()
+--		vim.cmd("colorscheme PaperColor")
+--		vim.cmd("highlight Normal guibg=NONE ctermbg=NONE")
+--		vim.cmd("highlight NvimTreeNormal guibg=NONE")
+--	end,
+--}
+--
 -- Extremely Minimal
 --return {
 --	'p00f/alabaster.nvim',
@@ -40,9 +69,9 @@ return {
 --		vim.cmd("highlight NvimTreeNormal guibg=NONE")
 --	end,
 --}
+
+
 --
-
-
 
 
 
@@ -77,7 +106,7 @@ return {
 --	vim.cmd('colorscheme nord')
 --    end
 --}
-
+--
 
 
 
@@ -156,7 +185,7 @@ return {
 --    vim.cmd("colorscheme cyberdream")
 --    end,
 --}
-----
+--
 --
 
 -- -- GruvBox
@@ -212,7 +241,7 @@ return {
 --	}
 --
 --}
-
+--
 
 
 
