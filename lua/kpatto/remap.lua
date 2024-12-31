@@ -4,6 +4,11 @@ vim.keymap.set('n', '<leader>f', ":Telescope find_files hidden=true<CR>")
 
 
 
+-- this is for segmenting code, will only work in langs where /**/ is valid 
+-- comment syntx.
+vim.keymap.set('n','<leader>c',"<Insert>/***********************************\n***********************************/<Esc>")
+
+
 
 -- Comment Keymaps [Split into Pair per Lang] --
 ------------------------------------------------

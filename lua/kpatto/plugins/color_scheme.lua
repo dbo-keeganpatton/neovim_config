@@ -1,28 +1,53 @@
 return {
-	'rose-pine/neovim',
-	lazy = false,
-	priority = 1000,
-	config = function ()
-		require("rose-pine").setup({
-			variant = "moon",
-			dark_variant = "moon",
-			dim_inactive_windows = true,
-			extend_background_behind_border = true,
-			enable = {
-				terminal = true,
-				legacy_highlights = true,
-				migrations = true,
-			},
+  'projekt0n/github-nvim-theme',
+  name = 'github-theme',
+  lazy = false,
+  priority = 1000,
+  config = function()
+    require('github-theme').setup({
+		options = {
+			transparent = true,
+			terminal_colors = true,
+			dim_inactive = true,
 			styles = {
-				bold = true,
-				italic = true,
-				transparency = true
+				comments = 'italic',
+				strings = 'italic',
+				variables = 'bold'
 			}
-	})
-	vim.cmd("colorscheme rose-pine")
-	end
+		}
+    })
+    vim.cmd('colorscheme github_dark_tritanopia')
+	vim.o.relativenumber = true
+	end,
 }
 
+
+--return {
+--	'rose-pine/neovim',
+--	lazy = false,
+--	priority = 1000,
+--	config = function ()
+--		require("rose-pine").setup({
+--			variant = "moon",
+--			dark_variant = "moon",
+--			dim_inactive_windows = true,
+--			enable = {
+--				terminal = true,
+--				legacy_highlights = true,
+--				migrations = true,
+--				relativenumber = true,
+--			},
+--			styles = {
+--				bold = true,
+--				italic = true,
+--				transparency = true
+--			}
+--	})
+--	vim.cmd("colorscheme rose-pine")
+--	vim.o.relativenumber = true
+--	vim.o.number = true
+--	end
+--}
 
 
 
@@ -69,9 +94,9 @@ return {
 --		vim.cmd("highlight NvimTreeNormal guibg=NONE")
 --	end,
 --}
-
-
 --
+--
+----
 
 
 
@@ -171,7 +196,7 @@ return {
 ----
 --
 
-
+--
 --return {
 --	"scottmckendry/cyberdream.nvim",
 --	lazy = false,
@@ -236,6 +261,9 @@ return {
 --		-- Color Cursor
 --		vim.o.guicursor = "n-v-c:block-Cursor/lCursor"
 --		vim.cmd [[highlight Cursor guifg='#00FF00'  guibg='#00FF00']]
+--		vim.o.relativenumber = true
+--		vim.o.number = true
+--
 --		--
 --		end,
 --	}
