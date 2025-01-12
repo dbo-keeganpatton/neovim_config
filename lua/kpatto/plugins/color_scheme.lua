@@ -1,25 +1,25 @@
-return {
-  'projekt0n/github-nvim-theme',
-  name = 'github-theme',
-  lazy = false,
-  priority = 1000,
-  config = function()
-    require('github-theme').setup({
-		options = {
-			transparent = true,
-			terminal_colors = true,
-			dim_inactive = true,
-			styles = {
-				comments = 'italic',
-				strings = 'italic',
-				variables = 'bold'
-			}
-		}
-    })
-    vim.cmd('colorscheme github_dark_tritanopia')
-	vim.o.relativenumber = true
-	end,
-}
+--return {
+--  'projekt0n/github-nvim-theme',
+--  name = 'github-theme',
+--  lazy = false,
+--  priority = 1000,
+--  config = function()
+--    require('github-theme').setup({
+--		options = {
+--			transparent = true,
+--			terminal_colors = true,
+--			dim_inactive = true,
+--			styles = {
+--				comments = 'italic',
+--				strings = 'italic',
+--				variables = 'bold'
+--			}
+--		}
+--    })
+--    vim.cmd('colorscheme github_dark_tritanopia')
+--	vim.o.relativenumber = true
+--	end,
+--}
 
 
 --return {
@@ -206,6 +206,11 @@ return {
 --            transparent = true,
 --			italic_comments = true,
 --            terminal_colors = true,
+--            hide_fillchars = true,
+--            borderless_telescope = true,
+--            theme = {
+--                saturation = 1
+--            }
 --	})
 --    vim.cmd("colorscheme cyberdream")
 --    end,
@@ -237,39 +242,75 @@ return {
 --}
 
 
---return {
---
---	{
---	"craftzdog/solarized-osaka.nvim",
---	priority = 1000,
---	config = function()
---		--
---		require("solarized-osaka").setup({
---			transparent = true,
---			terminal_colors = true,
---			styles = {
---			sidebars = "transparent"
---			}
---		})
---
---		vim.cmd([[colorscheme solarized-osaka]])
---		--		
---		-- Diable Cursorline
---		vim.o.cursorline = false
---		vim.cmd [[highlight CursorLine NONE]]
---		--	
---		-- Color Cursor
---		vim.o.guicursor = "n-v-c:block-Cursor/lCursor"
---		vim.cmd [[highlight Cursor guifg='#00FF00'  guibg='#00FF00']]
---		vim.o.relativenumber = true
---		vim.o.number = true
---
---		--
---		end,
---	}
---
---}
---
+return {
+
+	{
+	"craftzdog/solarized-osaka.nvim",
+	priority = 1000,
+	config = function()
+		--
+		require("solarized-osaka").setup({
+			transparent = true,
+			terminal_colors = true,
+			styles = {
+			sidebars = "transparent",
+            comments = {italic = true},
+            keywords = {italic = true},
+            functions = {bold = true}
+			},
+            dim_inactive = true,
+            -- Borderless Telescope
+            on_highlights = function(hl, c)
+                local prompt = "#2d3149"
+                hl.TelescopeNormal = {
+                  bg = c.bg_dark,
+                  fg = c.fg_dark,
+                }
+                hl.TelescopeBorder = {
+                  bg = c.bg_dark,
+                  fg = c.bg_dark,
+                }
+                hl.TelescopePromptNormal = {
+                  bg = prompt,
+                }
+                hl.TelescopePromptBorder = {
+                  bg = prompt,
+                  fg = prompt,
+                }
+                hl.TelescopePromptTitle = {
+                  bg = prompt,
+                  fg = prompt,
+                }
+                hl.TelescopePreviewTitle = {
+                  bg = c.bg_dark,
+                  fg = c.bg_dark,
+                }
+                hl.TelescopeResultsTitle = {
+                  bg = c.bg_dark,
+                  fg = c.bg_dark,
+                }
+              end
+
+        })
+
+		vim.cmd([[colorscheme solarized-osaka]])
+		--		
+		-- Diable Cursorline
+		vim.o.cursorline = false
+		vim.cmd [[highlight CursorLine NONE]]
+		--	
+		-- Color Cursor
+		vim.o.guicursor = "n-v-c:block-Cursor/lCursor"
+		vim.cmd [[highlight Cursor guifg='#00FF00'  guibg='#00FF00']]
+		vim.o.relativenumber = true
+		vim.o.number = true
+
+		--
+		end,
+	}
+
+}
+
 
 
 

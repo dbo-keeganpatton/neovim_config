@@ -13,7 +13,7 @@ return {
 
 		nvimtree.setup({
 		view = {
-			width = 40,
+			width = 30,
 			relativenumber = true
 		},
 
@@ -24,7 +24,9 @@ return {
 				}
 			}
 		},
-		
+        git = {
+            ignore = false
+        } 
 	})
 
 	local keymap = vim.keymap
