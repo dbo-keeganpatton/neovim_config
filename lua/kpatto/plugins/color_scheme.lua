@@ -48,7 +48,7 @@
 --	vim.o.number = true
 --	end
 --}
-
+--
 
 
 
@@ -78,28 +78,39 @@
 
 
 
---return {
---	'catppuccin/nvim',
---	name = "catppuccin",
---	lazy = false,
---	priority = 1000,
---	config = function()
---		require("catppuccin").setup(
---			{
---				flavour = "mocha"
---			}
---		)
---		vim.cmd("colorscheme catppuccin")
---		vim.cmd("highlight Normal guibg=NONE ctermbg=NONE")
---		vim.cmd("highlight NvimTreeNormal guibg=NONE")
---	end,
---}
---
+return {
+	'catppuccin/nvim',
+	name = "catppuccin",
+	lazy = false,
+	priority = 1000,
+	config = function()
+		require("catppuccin").setup(
+			{
+				flavour = "mocha"
+			}
+		)
+		vim.cmd("colorscheme catppuccin")
+		vim.cmd("highlight Normal guibg=NONE ctermbg=NONE")
+		vim.cmd("highlight NvimTreeNormal guibg=NONE")
+        vim.cmd("set relativenumber")
+	end,
+}
+
 --
 ----
 
 
-
+--return {
+--    'andreypopp/vim-colors-plain',
+--    lazy = false,
+--    priority = 1000,
+--    config = function()
+--   		vim.cmd("highlight Normal guibg=NONE ctermbg=NONE")
+--		vim.cmd("highlight NvimTreeNormal guibg=NONE")
+--     end
+--}
+--
+--
 
 --return {
 --	'olimorris/onedarkpro.nvim',
@@ -112,13 +123,13 @@
 --		vim.cmd("highlight NvimTreeNormal guibg=NONE")
 --	end,
 --}
+--
 
 
 
 
 
-
-
+--
 --return {
 --    'shaunsingh/nord.nvim',
 --    lazy = false,
@@ -134,7 +145,7 @@
 --
 
 
-
+--
 --return {
 --    'AlexvZyl/nordic.nvim',
 --    lazy = false,
@@ -158,7 +169,7 @@
 --	vim.cmd("highlight NvimTreeNormal guibg=NONE")
 --	end,
 --}
---
+
 
 --return {
 --  "xero/miasma.nvim",
@@ -218,7 +229,7 @@
 --
 --
 
--- -- GruvBox
+ -- GruvBox
 -- return {
 --	{
 --		"ellisonleao/gruvbox.nvim",
@@ -242,74 +253,74 @@
 --}
 
 
-return {
-
-	{
-	"craftzdog/solarized-osaka.nvim",
-	priority = 1000,
-	config = function()
-		--
-		require("solarized-osaka").setup({
-			transparent = true,
-			terminal_colors = true,
-			styles = {
-			sidebars = "transparent",
-            comments = {italic = true},
-            keywords = {italic = true},
-            functions = {bold = true}
-			},
-            dim_inactive = true,
-            -- Borderless Telescope
-            on_highlights = function(hl, c)
-                local prompt = "#2d3149"
-                hl.TelescopeNormal = {
-                  bg = c.bg_dark,
-                  fg = c.fg_dark,
-                }
-                hl.TelescopeBorder = {
-                  bg = c.bg_dark,
-                  fg = c.bg_dark,
-                }
-                hl.TelescopePromptNormal = {
-                  bg = prompt,
-                }
-                hl.TelescopePromptBorder = {
-                  bg = prompt,
-                  fg = prompt,
-                }
-                hl.TelescopePromptTitle = {
-                  bg = prompt,
-                  fg = prompt,
-                }
-                hl.TelescopePreviewTitle = {
-                  bg = c.bg_dark,
-                  fg = c.bg_dark,
-                }
-                hl.TelescopeResultsTitle = {
-                  bg = c.bg_dark,
-                  fg = c.bg_dark,
-                }
-              end
-
-        })
-
-		vim.cmd([[colorscheme solarized-osaka]])
-		--		
-		-- Diable Cursorline
-		vim.o.cursorline = false
-		vim.cmd [[highlight CursorLine NONE]]
-		--	
-		-- Color Cursor
-		vim.o.guicursor = "n-v-c:block-Cursor/lCursor"
-		vim.cmd [[highlight Cursor guifg='#00FF00'  guibg='#00FF00']]
-		vim.o.relativenumber = true
-		vim.o.number = true
-
-		--
-		end,
-	}
-
-}
+--return {
+--
+--	{
+--	"craftzdog/solarized-osaka.nvim",
+--	priority = 1000,
+--	config = function()
+--		--
+--		require("solarized-osaka").setup({
+--			transparent = true,
+--			terminal_colors = true,
+--			styles = {
+--			sidebars = "transparent",
+--            comments = {italic = true},
+--            keywords = {italic = true},
+--            functions = {bold = true}
+--			},
+--            dim_inactive = true,
+--            -- Borderless Telescope
+--            on_highlights = function(hl, c)
+--                local prompt = "#2d3149"
+--                hl.TelescopeNormal = {
+--                  bg = c.bg_dark,
+--                  fg = c.fg_dark,
+--                }
+--                hl.TelescopeBorder = {
+--                  bg = c.bg_dark,
+--                  fg = c.bg_dark,
+--                }
+--                hl.TelescopePromptNormal = {
+--                  bg = prompt,
+--                }
+--                hl.TelescopePromptBorder = {
+--                  bg = prompt,
+--                  fg = prompt,
+--                }
+--                hl.TelescopePromptTitle = {
+--                  bg = prompt,
+--                  fg = prompt,
+--                }
+--                hl.TelescopePreviewTitle = {
+--                  bg = c.bg_dark,
+--                  fg = c.bg_dark,
+--                }
+--                hl.TelescopeResultsTitle = {
+--                  bg = c.bg_dark,
+--                  fg = c.bg_dark,
+--                }
+--              end
+--
+--        })
+--
+--		vim.cmd([[colorscheme solarized-osaka]])
+--		--		
+--		-- Diable Cursorline
+--		vim.o.cursorline = false
+--		vim.cmd [[highlight CursorLine NONE]]
+--		--	
+--		-- Color Cursor
+--		vim.o.guicursor = "n-v-c:block-Cursor/lCursor"
+--		vim.cmd [[highlight Cursor guifg='#00FF00'  guibg='#00FF00']]
+--		vim.o.relativenumber = true
+--		vim.o.number = true
+--
+--		--
+--		end,
+--	}
+--
+--}
 
 
 
