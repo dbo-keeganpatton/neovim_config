@@ -1,4 +1,35 @@
 --return {
+--    "wnkz/monoglow.nvim",
+--    lazy = false,
+--    priority = 1000,
+--    opts = {},
+--    init = function ()
+--    vim.cmd.colorscheme("monoglow-void")
+--    end,
+--}
+
+
+return {
+  "xero/evangelion.nvim",
+  lazy = false,
+  priority = 1000,
+  opts = {
+    overrides = {
+      keyword = { fg = "#00ff00", bg = "#222222", undercurl = true },
+      ["@boolean"] = { link = "Special" },
+    },
+    transparent = true
+  },
+  init = function()
+  vim.cmd.colorscheme("evangelion")
+end,
+}
+
+
+
+
+
+--return {
 --  'projekt0n/github-nvim-theme',
 --  name = 'github-theme',
 --  lazy = false,
@@ -78,24 +109,24 @@
 
 
 
-return {
-	'catppuccin/nvim',
-	name = "catppuccin",
-	lazy = false,
-	priority = 1000,
-	config = function()
-		require("catppuccin").setup(
-			{
-				flavour = "mocha"
-			}
-		)
-		vim.cmd("colorscheme catppuccin")
-		vim.cmd("highlight Normal guibg=NONE ctermbg=NONE")
-		vim.cmd("highlight NvimTreeNormal guibg=NONE")
-        vim.cmd("set relativenumber")
-	end,
-}
-
+--return {
+--	'catppuccin/nvim',
+--	name = "catppuccin",
+--	lazy = false,
+--	priority = 1000,
+--	config = function()
+--		require("catppuccin").setup(
+--			{
+--				flavour = "mocha"
+--			}
+--		)
+--		vim.cmd("colorscheme catppuccin")
+--		vim.cmd("highlight Normal guibg=NONE ctermbg=NONE")
+--		vim.cmd("highlight NvimTreeNormal guibg=NONE")
+--        vim.cmd("set relativenumber")
+--	end,
+--}
+--
 --
 ----
 
